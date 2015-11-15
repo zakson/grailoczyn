@@ -64,6 +64,10 @@ div.zadanie{
 #motd {
 	/*color:#ff0;*/
 }
+
+window.onbeforeunload = function() {
+    return "Nie uciekaj z pola bitwy!";
+}
 	
 		</style>
 		<script>
@@ -105,16 +109,23 @@ function update(){
 		if( odpowiedz == (A*B) ){
 			komunikat = '<span class="good">Wynik '+odpowiedz+' jest prawidłowy! Otrzymujesz '+poziom+' punktów. Brawo!</span>';
 			punkty = punkty + poziom;
-			losuj();
+		//	losuj();
 		}else{
 			komunikat = '<span clas="bad"> Wynik '+odpowiedz+' jest nieprawidlowy, tracisz '+poziom+' punktów. Spróbuj jeszcze raz.</span>';
-			punkty = punkty - poziom;
+		//	punkty = punkty - poziom;
 		}
 	}
 	if(punkty < 0) punkty = 0;
 	poziom = Math.floor(punkty / 10) + 2;
+	losuj();
 	update();
-  }		
+  }	
+function levelup()
+{
+	poziom = poziom + 1;
+	losuj();
+	update();
+}  
 				
 		</script>	
 	</head>
@@ -126,7 +137,9 @@ function update(){
 		<div class="zadanie"><span id="zadanie">x</span></div>
 		<form>
 			<div class="wynik"><input id="wynik" placeholder="Podaj wynik"/>
-			<br /><input type="submit" value="Sprawdź" onclick="sprawdz(); return false"></div>
+			<br /><input type="submit" value="Sprawdź" onclick="sprawdz(); return false" />
+			<input type="button" value="poziom++" onclick="levelup();">
+			</div>
 		</form>
 		<div id="komunikat"><span class="bad">Gra wymaga JavaScript!</span></div>
 		<div id="motd">Przybyłem, Pomnożyłem, Wygrałem!</div>
