@@ -101,7 +101,7 @@ function update(){
   function sprawdz(){
     odpowiedz = $E('wynik').value;
 	if( isNaN(odpowiedz)){
-		komunikat = '<span clas="bad">Aby wygrać wprowadź liczbę będącą wynikiem zadanego mnożenia.</span>';	
+		komunikat = '<span class="bad">Aby wygrać wprowadź liczbę będącą wynikiem zadanego mnożenia.</span>';	
 	}
 	else{
 		if( odpowiedz == (A*B) ){
@@ -143,7 +143,7 @@ window.onbeforeunload = function() {
 			<input type="button" value="poziom++" onclick="levelup();">
 			</div>
 		</form>
-		<div id="komunikat"><span class="bad">Gra wymaga JavaScript!</span></div>
+		<div id="komunikat"><span class="bad">Gra wymaga JavaScript.</span></div>
 		<div id="motd">Przybyłem, Pomnożyłem, Wygrałem!</div>
 	
 	</body>
