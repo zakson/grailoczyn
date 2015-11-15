@@ -51,14 +51,14 @@ div.zadanie{
 #komunikat{
 	padding:20px;
 	font-size:30px;
-	/*color:#08f;*/
+	color:#0a0;
 }
 
-#komunikat good{
+#komunikat span.good{
 	color:#0f0;
 }
 	
-#komunikat bad{
+#komunikat span.bad{
 	color:#f00;
 }
 #motd {
@@ -103,7 +103,7 @@ function update(){
   function sprawdz(){
     odpowiedz = $E('wynik').value;
 	if( isNaN(odpowiedz)){
-		komunikat = '<span clas="bad">Aby wygrać wprowadź liczbę będącą wynikiem zadanego mnożenia. Inne wartości nie będą akceptowane!</span>';	
+		komunikat = '<span clas="bad">Aby wygrać wprowadź liczbę będącą wynikiem zadanego mnożenia.</span>';	
 	}
 	else{
 		if( odpowiedz == (A*B) ){
@@ -112,7 +112,7 @@ function update(){
 		//	losuj();
 		}else{
 			komunikat = '<span clas="bad"> Wynik '+odpowiedz+' jest nieprawidlowy, tracisz '+poziom+' punktów. Spróbuj jeszcze raz.</span>';
-		//	punkty = punkty - poziom;
+			punkty = punkty - poziom;
 		}
 	}
 	if(punkty < 0) punkty = 0;
