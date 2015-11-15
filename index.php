@@ -8,13 +8,15 @@ body, html{
 	margin:0px;
 	padding:0px;
 }	
-	
 body{
 	background-color:#000;
 	color:#070;
 	font-family:monospace;
 	font-size:20px;
 }	
+h1{
+	color:#0b0;
+}
 input{
 	background-color:#000;
 	color:#0a0;
@@ -36,6 +38,7 @@ div.zadanie{
 	clear:both;
 	padding:50px;
 	font-size:80px;
+	font-weight:bold;	
 	color:#0f0;
 }
 
@@ -48,7 +51,7 @@ div.zadanie{
 #komunikat{
 	padding:20px;
 	font-size:30px;
-	color:#08f;
+	/*color:#08f;*/
 }
 
 #komunikat good{
@@ -59,7 +62,7 @@ div.zadanie{
 	color:#f00;
 }
 #motd {
-	color:#ff0;
+	/*color:#ff0;*/
 }
 	
 		</style>
@@ -67,7 +70,7 @@ div.zadanie{
 	
 var A;
 var B;
-var poziom = 5;
+var poziom = 1;
 var punkty = 0;
 var komunikat = 'Witaj! System jest gotowy do rozgrywki.'; 
 
@@ -81,8 +84,8 @@ var komunikat = 'Witaj! System jest gotowy do rozgrywki.';
   }
 
 function losuj(){
-	A = Math.floor((Math.random() * poziom) + 1);
-	B = Math.floor((Math.random() * poziom) + 1);
+	A = Math.floor((Math.random() * poziom) + 2);
+	B = Math.floor((Math.random() * poziom) + 2);
     $E('zadanie').innerHTML = A + ' x ' + B;
 }
 
@@ -108,7 +111,8 @@ function update(){
 			punkty = punkty - poziom;
 		}
 	}
-	poziom = Math.floor(punkty / 10) + 5;
+	if(punkty < 0) punkty = 0;
+	poziom = Math.floor(punkty / 10) + 2;
 	update();
   }		
 				
