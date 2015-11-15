@@ -22,11 +22,13 @@ input{
 	color:#0a0;
 	font-family:monospace;
 	border:2px solid #080;
+    text-align:center;
 }
 #punkty, #poziom {
 	font-weight:bolder;
 	display:block;
 	font-size:50px;
+    color:#0f0;
 }
 div.punkty, div.poziom{
 
@@ -51,7 +53,6 @@ div.zadanie{
 #komunikat{
 	padding:20px;
 	font-size:30px;
-	color:#0a0;
 }
 
 #komunikat span.good{
@@ -65,9 +66,6 @@ div.zadanie{
 	/*color:#ff0;*/
 }
 
-window.onbeforeunload = function() {
-    return "Nie uciekaj z pola bitwy!";
-}
 	
 		</style>
 		<script>
@@ -107,11 +105,11 @@ function update(){
 	}
 	else{
 		if( odpowiedz == (A*B) ){
-			komunikat = '<span class="good">Wynik '+odpowiedz+' jest prawidłowy! Otrzymujesz '+poziom+' punktów. Brawo!</span>';
+			komunikat = '<span class="good">Wynik '+odpowiedz+' jest prawidłowy! Otrzymujesz '+poziom+' pkt. Brawo!</span>';
 			punkty = punkty + poziom;
 		//	losuj();
 		}else{
-			komunikat = '<span clas="bad"> Wynik '+odpowiedz+' jest nieprawidlowy, tracisz '+poziom+' punktów. Spróbuj jeszcze raz.</span>';
+			komunikat = '<span class="bad"> Wynik '+odpowiedz+' jest nieprawidlowy, tracisz '+poziom+' pkt. Spróbuj jeszcze raz.</span>';
 			punkty = punkty - poziom;
 		}
 	}
@@ -126,6 +124,10 @@ function levelup()
 	losuj();
 	update();
 }  
+
+window.onbeforeunload = function() {
+    return "Nie uciekaj z pola bitwy!";
+}
 				
 		</script>	
 	</head>
