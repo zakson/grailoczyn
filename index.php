@@ -128,10 +128,14 @@ function levelup()
 window.onbeforeunload = function() {
     return "Nie uciekaj z pola bitwy!";
 }
+
+window.onload = function() {
+    init();
+}
 				
 		</script>	
 	</head>
-	<body onload="init();">
+	<body>
 		<center>
 		<h1>Tabliczka Mnożenia - The Game</h1>
 		<div class="poziom">Poziom: <span id="poziom">x</span></div>
