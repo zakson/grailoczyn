@@ -107,7 +107,6 @@ function update(){
 		if( odpowiedz == (A*B) ){
 			komunikat = '<span class="good">Wynik '+odpowiedz+' jest prawidłowy! Otrzymujesz '+poziom+' pkt. Brawo!</span>';
 			punkty = punkty + poziom;
-		//	losuj();
 		}else{
 			komunikat = '<span class="bad"> Wynik '+odpowiedz+' jest nieprawidlowy, tracisz '+poziom+' pkt. Spróbuj jeszcze raz.</span>';
 			punkty = punkty - poziom;
